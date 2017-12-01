@@ -113,6 +113,23 @@ public class Ship implements KeyListener, Runnable
 	@Override
 	public void run()
 	{
+		while(true)
+		{
+			try
+			{
+				Thread.sleep(100);
+				update();
+			}
+			catch(InterruptedException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void update()
+	{
 		//changes the angle of the ship, stays between 0 and 360
 		angle += rotateSpeed;
 		while(angle>360)
